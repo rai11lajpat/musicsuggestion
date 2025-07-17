@@ -157,11 +157,30 @@ public List<Song> findTop10ByMood(Mood mood) {
 }
 
 private Mood parseMood(String moodStr) {
-    moodStr = moodStr.toLowerCase();
+    moodStr = moodStr.trim().toLowerCase();
 
+    if (moodStr.contains("dancemotivationalpatriotic")) return Mood.DANCE_MOTIVATIONAL_PATRIOTIC;
+    if (moodStr.contains("romanticsadsensual")) return Mood.ROMANTIC_SAD_SENSUAL;
+    if (moodStr.contains("motivationalpatriotic")) return Mood.MOTIVATIONAL_PATRIOTIC;
+    if (moodStr.contains("romanticsensual")) return Mood.ROMANTIC_SENSUAL;
+    if (moodStr.contains("dancepatriotic")) return Mood.DANCE_PATRIOTIC;
+    if (moodStr.contains("patrioticsad")) return Mood.PATRIOTIC_SAD;
+    if (moodStr.contains("romanticsad")) return Mood.ROMANTIC_SAD;
+    if (moodStr.contains("devotionalsad")) return Mood.DEVOTIONAL_SAD;
+    if (moodStr.contains("danceromantic")) return Mood.DANCE_ROMANTIC;
+    if (moodStr.contains("danceromance")) return Mood.DANCE_ROMANCE;
+    if (moodStr.contains("dancesensual")) return Mood.DANCE_SENSUAL;
+    if (moodStr.contains("dancesad")) return Mood.DANCE_SAD;
+    if (moodStr.contains("motivational")) return Mood.MOTIVATIONAL;
+    if (moodStr.contains("patriotic")) return Mood.PATRIOTIC;
+    if (moodStr.contains("sensual")) return Mood.SENSUAL;
+    if (moodStr.contains("romance")) return Mood.ROMANCE;
+    if (moodStr.contains("romantic")) return Mood.ROMANTIC;
+    if (moodStr.contains("devotional")) return Mood.DEVOTIONAL;
+    if (moodStr.contains("dance")) return Mood.DANCE;
     if (moodStr.contains("sad")) return Mood.SAD;
-    if (moodStr.contains("romantic")) return Mood.RELAXING;
-    if (moodStr.contains("dance") || moodStr.contains("energetic")) return Mood.ENERGETIC;
+    if (moodStr.contains("relaxing")) return Mood.RELAXING;
+    if (moodStr.contains("energetic")) return Mood.ENERGETIC;
     if (moodStr.contains("happy")) return Mood.HAPPY;
 
     return Mood.HAPPY; // fallback

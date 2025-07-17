@@ -31,14 +31,35 @@
         </xs:sequence>
     </xs:complexType>
 
+    
     <!-- Enum for mood -->
-    <xs:simpleType name="mood">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="Happy"/>
-            <xs:enumeration value="Sad"/>
-            <xs:enumeration value="Relaxing"/>
-            <xs:enumeration value="Energetic"/>
-        </xs:restriction>
-    </xs:simpleType>
+<xs:simpleType name="mood">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="Happy"/>
+        <xs:enumeration value="Sad"/>
+        <xs:enumeration value="Relaxing"/>
+        <xs:enumeration value="Energetic"/>
+        <xs:enumeration value="Dance"/>
+        <xs:enumeration value="DanceRomantic"/>
+        <xs:enumeration value="Romantic"/>
+        <xs:enumeration value="Devotional"/>
+        <xs:enumeration value="RomanticSad"/>
+        <xs:enumeration value="DanceSad"/>
+        <xs:enumeration value="Motivational"/>
+        <xs:enumeration value="Romance"/>
+        <xs:enumeration value="Sensual"/>
+        <xs:enumeration value="Patriotic"/>
+        <xs:enumeration value="RomanticSadSensual"/>
+        <xs:enumeration value="RomanticSensual"/>
+        <xs:enumeration value="DancePatriotic"/>
+        <xs:enumeration value="MotivationalPatriotic"/>
+        <xs:enumeration value="DanceSensual"/>
+        <xs:enumeration value="DevotionalSad"/>
+        <xs:enumeration value="DanceMotivationalPatriotic"/>
+        <xs:enumeration value="DanceRomance"/>
+        <xs:enumeration value="PatrioticSad"/>
+    </xs:restriction>
+</xs:simpleType>
+
 
 </xs:schema>
