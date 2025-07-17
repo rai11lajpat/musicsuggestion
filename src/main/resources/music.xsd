@@ -1,0 +1,44 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:tns="http://lajpat.com/guides/music" 
+    targetNamespace="http://lajpat.com/guides/music" 
+    elementFormDefault="qualified">
+
+<!-- Request: Filter songs by mood -->
+    <xs:element name="getSongRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="mood" type="tns:mood"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Response: Top 10 songs based on mood -->
+    <xs:element name="getSongResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="song" type="tns:song" minOccurs="0" maxOccurs="10"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Complex type: Song -->
+    <xs:complexType name="song">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="artist" type="xs:string"/>
+            <xs:element name="rating" type="xs:float"/>
+            <xs:element name="mood" type="tns:mood"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Enum for mood -->
+    <xs:simpleType name="mood">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Happy"/>
+            <xs:enumeration value="Sad"/>
+            <xs:enumeration value="Relaxing"/>
+            <xs:enumeration value="Energetic"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
